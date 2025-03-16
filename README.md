@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# ⚽ Football Scorecard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **React + TypeScript + Vite** project for displaying football match scores.  
+This project is built using **ShadCN UI, React Query, and TailwindCSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Live football match tracking
+- Dark mode support
+- Responsive and accessible design
+- API integration with **SportsMonk**
+- **ShadCN UI** components for a sleek UI
+- **React Query** for efficient data fetching
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📦 Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/your-username/football-scorecard.git
+   cd football-scorecard
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   yarn install
+   ```
+
+3. Start the development server:
+
+   ```sh
+   yarn dev
+   ```
+
+4. Open the app in your browser:
+
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## 🏗️ Tech Stack
+
+- **React 19 + TypeScript**
+- **Vite** - Fast build tool
+- **TailwindCSS** - Styling
+- **ShadCN UI** - Prebuilt UI components
+- **React Query** - Data fetching & caching
+- **Radix UI** - Accessible components
+
+---
+
+## 📂 Project Structure
+
+```
+📦 football-scorecard
+├── 📂 src
+│   ├── 📂 components
+│   │   ├── Sidebar.tsx
+│   │   ├── MatchPage.tsx
+│   │   ├── TrendingNews.tsx
+│   │   ├── DateSwitcher.tsx
+│   ├── 📂 hooks
+│   │   ├── useFetchFixtures.ts
+│   ├── 📂 assets
+│   │   ├── images/
+│   ├── App.tsx
+│   ├── main.tsx
+├── 📜 package.json
+├── 📜 tailwind.config.ts
+├── 📜 vite.config.ts
+├── 📜 README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Scripts
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| Command         | Description                         |
+|----------------|-------------------------------------|
+| `yarn dev`     | Start development server           |
+| `yarn build`   | Build for production               |
+| `yarn preview` | Preview production build           |
+| `yarn lint`    | Run ESLint for code linting        |
+
+---
+
+## 📜 License
+
+This project is **open-source** and available under the **MIT License**.
+
+---
