@@ -124,3 +124,49 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px; /* Width for vertical scrollbar */
+  height: 8px; /* Height for horizontal scrollbar */
+}
+
+/* Track (the background) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light mode track */
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Light mode scrollbar */
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+/* Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1f1f1f; /* Dark mode track */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555; /* Dark mode scrollbar */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+/* Scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0;
+}
+
+.dark * {
+  scrollbar-color: #555 #1f1f1f;
+}
