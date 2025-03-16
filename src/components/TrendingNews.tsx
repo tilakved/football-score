@@ -56,7 +56,7 @@ const newsData = [
 
 export default function TrendingNews() {
     return (
-        <div className="bg-darker text-black dark:text-white p-4 max-w-[300px] rounded-2xl">
+        <div className="bg-darker text-black dark:text-white p-4 max-w-[300px] rounded-2xl bg-gray-100 dark:bg-gray-900">
             <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold ">Trending News</h3>
                 <span className="text-primary text-xl"><ChevronRight/></span>

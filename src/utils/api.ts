@@ -1,16 +1,12 @@
 export const fetchFixturesByDate = async (date: string) => {
   try {
     const API_KEY = "5G5ULKlzuWWPaz4ycVgvv0wB11ynHXHSILICVtrwTraLpVwnhJ2n0oh8og8Z";
-    const BASE_URL = "https://api.sportmonks.com/v3/football/fixtures";
+    const BASE_URL = "https://corsproxy-1.onrender.com/full?url=https://api.sportmonks.com/v3/football/fixtures";
 
-    const response = await fetch(`${BASE_URL}/date=${date}&api_token=${API_KEY}`, {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    });
+
+    const response = await fetch(`${BASE_URL}/date/${date}?api_token=${API_KEY}`);
+
+    console.log('_____:', response)
 
     if (!response.ok) throw new Error("API Failed");
 
