@@ -66,7 +66,7 @@ export default function Sidebar() {
             </div>
 
             {/* Navigation */}
-            <nav className="space-y-2">
+            <nav className="">
                 <SidebarItem icon={<Home size={22} />} label="Home" active />
                 <SidebarItem icon={<Users size={22} />} label="Leader Board" />
                 <SidebarItem icon={<Speaker size={22} />} label="Ground" />
@@ -88,9 +88,9 @@ export default function Sidebar() {
             <SidebarItem icon={<Download size={22} />} label="Download The App" />
 
             {/* Light/Dark Mode Toggle */}
-            <div className="flex items-center justify-between bg-gray-600 p-1 rounded-full my-4">
+            <div className="flex items-center justify-between bg-gray-600 p-1 rounded-md my-2">
                 <button
-                    className={`flex items-center space-x-2 px-4 py-1 rounded-full transition-all ${
+                    className={`flex items-center space-x-2 px-4 py-1 rounded-md transition-all ${
                         !darkMode ? "bg-black text-white" : "text-gray-400"
                     }`}
                     onClick={() => toggleTheme("light")}
@@ -100,7 +100,7 @@ export default function Sidebar() {
                 </button>
 
                 <button
-                    className={`flex items-center space-x-2 px-4 py-1 rounded-full transition-all ${
+                    className={`flex items-center space-x-2 px-4 py- rounded-md transition-all ${
                         darkMode ? "bg-black text-white" : "text-gray-400"
                     }`}
                     onClick={() => toggleTheme("dark")}
@@ -113,20 +113,20 @@ export default function Sidebar() {
             <Separator className="my-2 bg-gray-300 dark:bg-darker" />
 
             {/* Profile Section */}
-            <div className="mt-auto flex items-center bg-gray-800 dark:bg-gray-700 p-3 rounded-xl">
+            <div className="bg-gray-800 dark:bg-gray-700 flex gap-2 items-center mt-auto p-2 rounded-xl">
                 {/* User Avatar */}
                 <div className="w-10 h-10 flex items-center justify-center bg-primary rounded-lg">
                     <User size={20} className="text-black dark:text-gray-900" />
                 </div>
 
                 {/* User Details */}
-                <div className="ml-3 flex-1">
+                <div className="flex-1">
                     <p className="text-sm font-semibold text-white">Varun_kubal</p>
                     <p className="text-xs text-gray-400">varun_kubal@gmail.com</p>
                 </div>
 
                 {/* Logout Button */}
-                <button className="ml-2 p-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-primary transition">
+                <button className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-primary transition">
                     <LogOut size={20} />
                 </button>
             </div>

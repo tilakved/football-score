@@ -38,13 +38,12 @@ export default function MatchPage() {
 
   // Count live matches
   const liveMatchesCount =
-  Object.values(groupedMatches || {})
-    .flat()
-    .filter((match: any) => match.isLive).length || 0;
-
+    Object.values(groupedMatches || {})
+      .flat()
+      .filter((match: any) => match.isLive).length || 0;
 
   return (
-    <div className="flex-grow text-white bg-gray-100 dark:bg-gray-900 rounded-2xl">
+    <div className="flex-grow text-white bg-gray-100 dark:bg-gray-900 rounded-2xl h-full">
       {/* Header Banner */}
       <div className="relative w-full px-4">
         <img
@@ -54,42 +53,44 @@ export default function MatchPage() {
         />
       </div>
 
-      <div className="flex items-center justify-between gap-2 p-4 pb-0">
-        {/* Live Indicator */}
-        <div className="bg-gray-800 flex items-center p-[6px] rounded-md space-x-2 text-green-500">
-          <span className="font-bold">● Live</span>
-          <span
-            className={`bg-green-700 px-2 py-1 text-xs rounded-md ${
-              liveMatchesCount === 0 ? "opacity-50" : ""
-            }`}
-          >
-            {liveMatchesCount}
-          </span>
+      <div className="p-4 container mx-auto h-full">
+        <div className="flex items-center justify-between gap-2">
+          {/* Live Indicator */}
+          <div className="bg-gray-800 flex items-center p-[6px] rounded-md space-x-2 text-green-500">
+            <span className="font-bold">● Live</span>
+            <span
+              className={`bg-green-700 px-2 py-1 text-xs rounded-md ${
+                liveMatchesCount === 0 ? "opacity-50" : ""
+              }`}
+            >
+              {liveMatchesCount}
+            </span>
+          </div>
+
+          {/* Search Input */}
+          <input
+            type="text"
+            placeholder="Search For Matches"
+            className="px-3 py-2 bg-gray-800 rounded-md text-sm w-60 flex-1 text-center"
+          />
+
+          {/* Dropdown Button */}
+          <button className="bg-gray-800 flex hover:text-white items-center p-2 rounded-md text-gray-400 text-sm transition">
+            All Matches <ChevronDown size={16} className="ml-1" />
+          </button>
         </div>
 
-        {/* Search Input */}
-        <input
-          type="text"
-          placeholder="Search For Matches"
-          className="px-3 py-2 bg-gray-800 rounded-md text-sm w-60 flex-1 text-center"
-        />
-
-        {/* Dropdown Button */}
-        <button className="bg-gray-800 flex hover:text-white items-center p-2 rounded-md text-gray-400 text-sm transition">
-          All Matches <ChevronDown size={16} className="ml-1" />
-        </button>
-      </div>
-
-      <div className="p-4 container mx-auto">
         {/* Date Switcher */}
-        <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+        <div className="flex items-center gap-2 overflow-x-auto whitespace-nowrap mt-4">
           <DateSwitcher onDateChange={setSelectedDate} />
         </div>
 
         {/* Match List */}
-        <div className="mt-6 space-y-6">
+        <div className="mt-6 space-y-6 overflow-y-auto max-h-full">
           {isLoading && (
-            <p className="text-center mt-4 animate-pulse text-primary">Loading...</p>
+            <p className="text-center mt-4 animate-pulse text-primary">
+              Loading...
+            </p>
           )}
           {error && (
             <p className="text-center mt-4 text-red-500">
@@ -97,27 +98,32 @@ export default function MatchPage() {
             </p>
           )}
 
-          {Object.keys(groupedMatches).length ? (
-            Object.entries(groupedMatches).map(([league, matches]: any) => (
-              <div key={league} className="bg-gray-900 rounded-lg shadow-md p-4">
-                {/* League Header */}
-                <div className="flex justify-between items-center border-b border-gray-700 pb-2 mb-3">
-                  <h3 className="text-lg font-semibold text-white">{league}</h3>
-                </div>
+          {Object.keys(groupedMatches).length
+            ? Object.entries(groupedMatches).map(([league, matches]: any) => (
+                <div
+                  key={league}
+                  className="bg-gray-900 rounded-lg shadow-md p-4"
+                >
+                  {/* League Header */}
+                  <div className="flex justify-between items-center border-b border-gray-700 pb-2 mb-3">
+                    <h3 className="text-lg font-semibold text-white">
+                      {league}
+                    </h3>
+                  </div>
 
-                {/* Match List */}
-                <div className="space-y-3">
-                  {matches.map((match: any) => (
-                    <MatchCard key={match.id} match={match} />
-                  ))}
+                  {/* Match List */}
+                  <div className="space-y-3">
+                    {matches.map((match: any) => (
+                      <MatchCard key={match.id} match={match} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            !isLoading && (
-              <p className="text-center text-gray-400">No matches available</p>
-            )
-          )}
+              ))
+            : !isLoading && (
+                <p className="text-center text-gray-400">
+                  No matches available
+                </p>
+              )}
         </div>
       </div>
     </div>
