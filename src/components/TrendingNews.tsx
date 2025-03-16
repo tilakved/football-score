@@ -53,10 +53,9 @@ const newsData = [
 
     },
 ];
-
 export default function TrendingNews() {
     return (
-        <div className="bg-darker text-black dark:text-white p-4 max-w-[300px] rounded-2xl bg-gray-100 dark:bg-gray-900">
+        <div className="bg-darker text-black dark:text-white p-4 w-full md:w-auto rounded-2xl bg-gray-100 dark:bg-gray-900">
             <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold ">Trending News</h3>
                 <span className="text-primary text-xl"><ChevronRight/></span>
@@ -67,16 +66,16 @@ export default function TrendingNews() {
                     alt={bannerNews.title}
                     className="w-full h-32 rounded-lg object-cover"
                 />
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-full">
                     <div className="flex-1">
-                        <h4 className="text-sm font-semibold ">{bannerNews.title}</h4>
+                        <h4 className="text-sm font-semibold">{bannerNews.title}</h4>
                         <p className="text-xs text-gray-400">{bannerNews.time}</p>
                     </div>
                     <Bookmark className="text-primary w-5 h-5" />
                 </div>
             </div>
             <div className="space-y-4">
-                {newsData.map((news, index) => (
+                {newsData.map((news) => (
                     <div key={news.id} className="flex items-center gap-4">
                         <img
                             src={news.image}
@@ -84,7 +83,7 @@ export default function TrendingNews() {
                             className="w-12 h-12 rounded-lg object-cover"
                         />
                         <div className="flex-1">
-                            <h4 className="text-sm font-semibold ">{news.title}</h4>
+                            <h4 className="text-sm font-semibold">{news.title}</h4>
                             <p className="text-xs text-gray-400">{news.time}</p>
                         </div>
                         <Bookmark className="text-primary w-5 h-5" />
@@ -94,3 +93,4 @@ export default function TrendingNews() {
         </div>
     );
 }
+

@@ -49,10 +49,10 @@ export default function Sidebar() {
     };
 
     return (
-        <aside className="text-black dark:text-white w-64 p-4 flex flex-col bg-gray-100 dark:bg-gray-900 rounded-2xl">
+        <aside className="text-black dark:text-white w-full md:w-64 p-4 flex flex-col bg-gray-100 dark:bg-gray-900 rounded-2xl">
             {/* Logo */}
-            <h2 className="text-2xl font-bold mb-4">
-                FOOTBALL<span className="text-primary">SHURU</span>
+            <h2 className="text-2xl font-bold mb-4 italic">
+                FOOTBALL<span className="text-yellow-500 font-light">SHURU</span>
             </h2>
 
             {/* Search Bar */}
@@ -148,11 +148,11 @@ const SidebarItem = ({
 }) => (
     <div
         className={`relative flex items-center space-x-2 px-3 py-2 rounded-md cursor-pointer transition ${
-            active ? "text-primary font-bold dark:text-white dark:bg-gray-700" : "hover:bg-gray-200 dark:hover:bg-gray-800"
+            active ? "text-yellow-500 font-bold" : "hover:bg-gray-200 dark:hover:bg-gray-800"
         }`}
         onClick={onClick}
     >
-        {active && <div className="absolute left-0 w-2 h-full bg-primary rounded-r-full"></div>}
+        {active && <div className="absolute left-0 w-2 h-full bg-yellow-500 rounded-r-full"></div>}
         {icon}
         <span className="text-sm">{label}</span>
     </div>

@@ -50,7 +50,7 @@ export default function MatchPage() {
         <img
           src={bannerImage}
           alt="Banner"
-          className="w-full h-40 object-cover rounded-2xl object-top"
+          className="w-full h-40 object-cover rounded-2xl object-top mt-4"
         />
       </div>
 
@@ -89,7 +89,7 @@ export default function MatchPage() {
         {/* Match List */}
         <div className="mt-6 space-y-6">
           {isLoading && (
-            <p className="text-center mt-4 animate-pulse">Loading...</p>
+            <p className="text-center mt-4 animate-pulse text-primary">Loading...</p>
           )}
           {error && (
             <p className="text-center mt-4 text-red-500">
